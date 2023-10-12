@@ -10,13 +10,16 @@ app.innerHTML = `
 </div>
 `;
 const gameName = "Zane's gamer";
-
+let counter = 0;
 document.title = gameName;
 const element2 = document.querySelector<HTMLButtonElement>("#counter")!;
-
-element2.innerHTML = '💨';
-
-
+const setCounter = (count: number) => {
+  counter = count;
+  element2.innerHTML = `You have created ${counter} polutions💨`;
+  console.log("Wasa");
+};
+element2.addEventListener("click", () => setCounter(counter + 1));
+setCounter(0);
 const header = document.createElement("h1");
 header.innerHTML = gameName;
 app.append(header);
