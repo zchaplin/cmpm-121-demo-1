@@ -18,6 +18,8 @@ const setCounter = (count: number) => {
   element2.innerHTML = `You have created ${counter} polutions💨`;
   console.log("Wasa");
 };
+setInterval(() => setCounter(counter + 1), 1000);
+
 element2.addEventListener("click", () => setCounter(counter + 1));
 setCounter(0);
 const header = document.createElement("h1");
