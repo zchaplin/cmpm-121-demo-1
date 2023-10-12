@@ -46,7 +46,7 @@ const upgrades: { [key: string]: Upgrade } = {
   },
   upgradeThree: {
     button: document.querySelector<HTMLButtonElement>("#upgradeThree")!,
-    name: "Tod Cobell",
+    name: "Todd Cobell",
     cost: 1000,
     effect: 50,
     times: 0,
