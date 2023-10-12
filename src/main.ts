@@ -68,10 +68,11 @@ function upgradeFunc(upgrade: string) {
   if (counter >= upgrades[upgrade].cost) {
     counter -= upgrades[upgrade].cost;
     updateFrameSpeed += upgrades[upgrade].effect;
+    upgrades[upgrade].cost *= 1.15;
     upgrades[upgrade].times += 1;
-    upgrades[
+    upgrades[upgrade].button.innerHTML = `${upgrade}<div>Cost: ${upgrades[
       upgrade
-    ].button.innerHTML = `${upgrade}<div>Cost: ${upgrades[upgrade].cost} Pollutants<div>Count: ${upgrades[upgrade].times}`;
+    ].cost.toFixed(2)} Pollutants<div>Count: ${upgrades[upgrade].times}`;
   }
 }
 setCounter(0);
@@ -82,9 +83,9 @@ for (const upgrade in upgrades) {
   upgrades[upgrade].button.addEventListener("click", () =>
     upgradeFunc(upgrade),
   );
-  upgrades[
+  upgrades[upgrade].button.innerHTML = `${upgrade}<div>Cost: ${upgrades[
     upgrade
-  ].button.innerHTML = `${upgrade}<div>Cost: ${upgrades[upgrade].cost} Pollutants<div>Count: ${upgrades[upgrade].times}`;
+  ].cost.toFixed(2)} Pollutants<div>Count: ${upgrades[upgrade].times}`;
 }
 
 const header = document.createElement("h1");
