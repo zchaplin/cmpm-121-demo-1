@@ -146,5 +146,5 @@ for (const upgrade in upgrades) {
 }
 
 const header = document.createElement("h1");
-header.innerHTML = "Zanes gamering";
+header.innerHTML = "Zanes gamerin";
 app.append(header);
