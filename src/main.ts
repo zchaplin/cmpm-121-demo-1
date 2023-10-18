@@ -93,9 +93,9 @@ const setCounter = (count: number) => {
   const deltaTime = currentTime - lastTime;
   console.log(count);
   counter = count;
-  if (deltaTime > 1000 / updateFrameSpeed) {
+  if (deltaTime > 10 / updateFrameSpeed) {
     lastTime = currentTime;
-    counter += 1;
+    counter += 1 / 100;
   }
   perSec.innerHTML = `You speed up ${updateFrameSpeed.toFixed(
     1,
